@@ -1,0 +1,91 @@
+package com.example.vet.model;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+
+@Entity(name = "client")
+public class Client {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
+	private Long id;
+	@Column(name = "rut")
+	private String rut;
+	@Column(name = "name_client")
+	private String nameClient;
+	@Column(name = "lastname")
+	private String lastname;
+	@Column(name = "email")
+	private String email;
+	//@JoinColumn(name = "pet_id")
+	//@ManyToOne
+	//private Pet pet;
+
+	public Client() {
+
+	}
+
+	public Client(Long id, String rut, String name, String lastname, String email, Pet pet) {
+		this.id = id;
+		this.rut = rut;
+		this.nameClient = name;
+		this.lastname = lastname;
+		this.email = email;
+		//this.pet = pet;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getRut() {
+		return rut;
+	}
+
+	public void setRut(String rut) {
+		this.rut = rut;
+	}
+
+	public String getName() {
+		return nameClient;
+	}
+
+	public void setName(String name) {
+		this.nameClient = name;
+	}
+
+	public String getLastname() {
+		return lastname;
+	}
+
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	/*public Pet getPet() {
+		return pet;
+	}
+
+	public void setPet(Pet pet) {
+		this.pet = pet;
+	}*/
+
+}
